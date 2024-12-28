@@ -82,11 +82,7 @@ La estructura del proyecto es la siguiente:
 </p>
 
 ## Video
-<p>
-  <video width="320" height="240" controls>
-    <source src="resources/video_720.mov">
-  </video>
-</p>
+{{< video src="sample-video.mp4" >}}
 
 ## Tests
 En desarrollo. :construction:
