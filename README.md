@@ -81,6 +81,13 @@ La estructura del proyecto es la siguiente:
     <img src="resources/catch.png" alt="Favorite Screen" width="200">
 </p>
 
+## Video
+<p>
+  <video width="320" height="240" controls>
+    <source src="resources/video_720.mov">
+  </video>
+</p>
+
 ## Tests
 En desarrollo. :construction:
 
