@@ -82,7 +82,7 @@ La estructura del proyecto es la siguiente:
 </p>
 
 ## Video
-<video src="resources/video.mp4" width="320" height="200" controls preload></video>
+<video src="resources/video_720.mov" width="320" height="200" controls preload></video>
 
 ## Tests
 En desarrollo. :construction:
