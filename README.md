@@ -75,7 +75,10 @@ La estructura del proyecto es la siguiente:
 
 ## Capturas
 <p>
-    <img src="resources/splash.png" alt="Splash Screen" width="300">
+    <img src="resources/splash.png" alt="Splash Screen" width="200">
+    <img src="resources/home.png" alt="Home Screen" width="200">
+    <img src="resources/details.png" alt="Detail Screen" width="200">
+    <img src="resources/catch.png" alt="Favorite Screen" width="200">
 </p>
 
 ## Tests
