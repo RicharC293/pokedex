@@ -82,7 +82,9 @@ La estructura del proyecto es la siguiente:
 </p>
 
 ## Video
-<video src="resources/video_720.mp4" width="320" height="200" controls preload></video>
+https://github.com/user-attachments/assets/16915745-8459-4c69-b413-9bc6f3d2c053
+
+
 
 ## Tests
 En desarrollo. :construction:
