@@ -74,7 +74,7 @@ La estructura del proyecto es la siguiente:
 - Linux :heavy_check_mark:
 
 ## Capturas
-![Captura 1](<URL_SCREEN>)
+![Splash](https://github.com/RicharC293/pokedex/blob/main/resources/splash.png|width=100)
 ![Captura 2](<URL_SCREEN>)
 
 ## Tests
