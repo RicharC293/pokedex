@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pokemon/core/extensions/context_extension.dart';
@@ -21,6 +23,8 @@ class PokemonListScreen extends StatefulWidget {
 class _PokemonListScreenState extends State<PokemonListScreen> {
   late ScrollController _scrollController;
 
+  Timer? _debounce;
+
   @override
   void initState() {
     super.initState();
@@ -32,6 +36,7 @@ class _PokemonListScreenState extends State<PokemonListScreen> {
   void dispose() {
     _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
+    _debounce?.cancel();
     super.dispose();
   }
 
@@ -63,6 +68,22 @@ class _PokemonListScreenState extends State<PokemonListScreen> {
               width: 250,
               height: 100,
               fit: BoxFit.contain,
+            ),
+            const SizedBox(height: space6),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Search Pokemon',
+                prefixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              onChanged: (value) {
+                if (_debounce?.isActive ?? false) _debounce?.cancel();
+                _debounce = Timer(const Duration(milliseconds: 2000), () {
+                  context.read<PokemonListNotifier>().filterPokemon(value);
+                });
+              },
             ),
             const SizedBox(height: space6),
             LayoutBuilder(builder: (context, constraints) {

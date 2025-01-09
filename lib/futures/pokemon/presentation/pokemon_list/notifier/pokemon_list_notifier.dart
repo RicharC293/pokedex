@@ -24,7 +24,11 @@ class PokemonListNotifier extends ChangeNotifier {
   /// Properties
   List<Pokemon> _pokemons;
 
+  List<Pokemon> _pokemonAux = [];
+
   List<Pokemon> get pokemons => _pokemons;
+
+  List<Pokemon> get pokemonAux => _pokemonAux;
 
   PokemonPageStatus _status;
 
@@ -48,6 +52,7 @@ class PokemonListNotifier extends ChangeNotifier {
     final result = await _getAllPokemon(page: _currentPage);
     _currentPage++;
     _pokemons = [..._pokemons, ...result.data!];
+    _pokemonAux = _pokemons;
     _status = result is DataSuccess
         ? PokemonPageStatus.success
         : PokemonPageStatus.failed;
@@ -72,6 +77,18 @@ class PokemonListNotifier extends ChangeNotifier {
       }
       return e;
     }).toList();
+    notifyListeners();
+  }
+
+  void filterPokemon(String query) {
+    if (query.isEmpty) {
+      _pokemons = _pokemonAux;
+      notifyListeners();
+    }
+    _pokemons = _pokemons
+        .where((element) =>
+            element.name.toUpperCase().contains(query.toUpperCase()))
+        .toList();
     notifyListeners();
   }
 }
